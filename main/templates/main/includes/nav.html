@@ -1,0 +1,25 @@
+<nav>
+        <div class="nav-wrapper">
+          <a href="#" class="brand-logo">Todo List </a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="/">home</a></li>
+            {% if user.is_authenticated %}
+                  <li><a href="https://github.com/mmaashraf">Github</a></li>
+                 <li><a href="#">{{user.username|title}}</a></li>
+                 <li><a href="/logout">Logout</a></li>
+                 <li><a href="/viewlist">My Todo list</a></li>
+
+                 <li><a href="{% url 'main:book_list' %}">CRUD Todo list</a></li>
+                
+            {% else %}
+                <li><a href="/login">Login</a></li>
+                <li><a href="/register">Register</a></li>
+
+            {% endif %}
+            
+    
+    
+    
+          </ul>
+        </div>
+      </nav>

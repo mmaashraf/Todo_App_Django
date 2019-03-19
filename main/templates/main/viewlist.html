@@ -1,0 +1,41 @@
+{% extends 'main/header.html' %}
+
+
+{% block content %}
+    these are the today's objectives/tasks
+
+
+	<div class="row">
+
+		{% for tut in todos %}
+
+		<div class="col s12 m6">
+		  <div class="card blue-grey darken-1">
+		    <div class="card-content white-text">
+		      <span class="card-title">{{tut.todo_title}}</span>
+		      <p style="font-style:70% ">{{tut.todo_deadline}}</p>
+		      <p>{{tut.todo_content|safe}}</p>
+		    </div>
+		    <div class="card-action">
+						<a href="#">STATUS_COMPLETED</a>
+						<a href="#">: {{tut.todo_status}}</a>
+				
+
+
+
+<!-- 
+		      <a href="#">STATUS</a>
+		      {% if tut.todo_status is not '1' %}
+		      <a href="#">COMPLETED</a>
+		      {% else %}
+		      <a href="#">NOT YET DONE</a>
+		      {% endif %} -->
+		      
+		    </div>
+		  </div>
+		</div>
+		{% endfor %}
+
+  </div>
+            
+{% endblock %}

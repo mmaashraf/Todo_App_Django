@@ -1,0 +1,47 @@
+{% extends 'main/header.html' %}
+
+{% block content %}
+
+<!-- <h2><a href="{% url 'main:book_list' %}">Books FBV</a></h2> -->
+
+<!-- <ul>
+    {% for book in object_list %}
+    <li>{{ book.todo_title }} {{ book.todo_deadline }}{{ book.todo_content }} {{ book.todo_status }}
+    <a href="{% url 'main:book_edit' book.id %}">edit</a>
+    <a href="{% url 'main:book_delete' book.id %}">delete</a>
+    </li>
+    {% endfor %}
+</ul> -->
+
+
+<strong><a href="{% url 'main:book_new' %}">New Todo</a></strong>
+
+<div class="row">
+
+		{% for book in object_list %}
+
+		<div class="col s12 m6">
+		  <div class="card blue-grey darken-1">
+		    <div class="card-content white-text">
+		      <span class="card-title">{{book.todo_title}}</span>
+              <p style="font-style:70% ">{{book.todo_deadline}}</p>
+              <p>{{book.todo_status}}</p>
+              <p>{{book.todo_content}}</p>
+		    </div>
+		    <div class="card-action">
+						<a href="{% url 'main:book_edit' book.id %}">EDIT</a>
+						<a href="{% url 'main:book_delete' book.id %}">DELETE</a>
+		      
+		    </div>
+		  </div>
+		</div>
+		{% endfor %}
+
+  </div>
+
+
+
+
+
+
+{% endblock %}

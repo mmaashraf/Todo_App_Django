@@ -1,0 +1,17 @@
+{% extends 'main/header.html' %}
+
+{% block content %}
+
+<h2>Todo Task</h2>
+<B>note: input for Todo deadline must be of the form YYYY-MM-DD hh:mm:ss 
+example: 2019-03-18 23:00:00</B>
+<form method="post">{% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Submit" />
+</form>
+<script>
+        document.getElementById("id_todo_status").style.display="inline-block";
+       document.getElementById("id_todo_status").style.color="red";
+   </script>
+
+{% endblock %}
